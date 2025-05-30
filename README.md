@@ -72,61 +72,66 @@ Comic-Project is a **robust**, **future-proof** platform built for **rapid itera
     ├── css              # Tailwind & custom styles
     ├── js               # API integration & UI scripts
     └── index.html       # Main entry
-🛠️ Getting Started
-Prerequisites
-Node.js v14+ & npm
+```
 
-MongoDB (local or Atlas)
+---
 
-Git CLI
+## 🛠️ Getting Started
 
-Backend (comic-backend)
-bash
-Copy
-Edit
+### Prerequisites
+- **Node.js** v14+ & **npm**  
+- **MongoDB** (local or Atlas)  
+- **Git CLI**  
+
+### Backend (comic-backend)
+```bash
 cd comic-backend
 npm install
 cp .env.example .env        # Configure PORT, MONGODB_URI, JWT_SECRET
 npm run dev                 # Start in hot-reload mode
-Frontend (comic-frontend)
-bash
-Copy
-Edit
+```
+
+### Frontend (comic-frontend)
+```bash
 cd ../comic-frontend
-# In js/api.js ensure API_BASE_URL matches backend URI
+# Trong js/api.js, đảm bảo API_BASE_URL trỏ đúng backend URI
 npm install -g live-server   # optional
-live-server                  # Launch UI at http://127.0.0.1:8080
-🔌 API Overview
-Endpoint	Method	Description
-Auth		
-POST /api/auth/register	POST	Onboard new user
-POST /api/auth/login	POST	Authenticate & issue JWT
-Stories		
-GET /api/stories	GET	List all stories (+ filters)
-GET /api/stories/:id	GET	Story details
-POST /api/stories	POST	Create new story (auth required)
-PUT /api/stories/:id	PUT	Update story (owner/admin)
-DELETE /api/stories/:id	DELETE	Delete story (owner/admin)
-Chapters (nested under story)		
-GET /api/stories/:id/chapters	GET	List chapters
-POST /api/stories/:id/chapters	POST	Create chapter
-PUT /api/stories/:id/chapters/:cid	PUT	Update chapter
-DELETE /api/stories/:id/chapters/:cid	DELETE	Delete chapter
+live-server                  # Mở UI tại http://127.0.0.1:8080
+```
 
-🤝 Contributing
-Fork this repo
+---
 
-Branch: git checkout -b feature/YourFeature
+## 🔌 API Overview
 
-Commit: git commit -m "Implement YourFeature"
+| Endpoint                                 | Method | Description                              |
+| ---------------------------------------- | ------ | ---------------------------------------- |
+| **Auth**                                 |        |                                          |
+| `POST /api/auth/register`                | POST   | Onboard new user                         |
+| `POST /api/auth/login`                   | POST   | Authenticate & issue JWT                 |
+| **Stories**                              |        |                                          |
+| `GET /api/stories`                       | GET    | List all stories (+ filters)             |
+| `GET /api/stories/:id`                   | GET    | Story details                            |
+| `POST /api/stories`                      | POST   | Create new story (auth required)         |
+| `PUT /api/stories/:id`                   | PUT    | Update story (owner/admin)               |
+| `DELETE /api/stories/:id`                | DELETE | Delete story (owner/admin)               |
+| **Chapters** (nested under story)        |        |                                          |
+| `GET /api/stories/:id/chapters`          | GET    | List chapters                            |
+| `POST /api/stories/:id/chapters`         | POST   | Create chapter                           |
+| `PUT /api/stories/:id/chapters/:cid`     | PUT    | Update chapter                           |
+| `DELETE /api/stories/:id/chapters/:cid`  | DELETE | Delete chapter                           |
 
-Push: git push origin feature/YourFeature
+---
 
-PR: Open a pull request—let’s ship fast.
+## 🤝 Contributing
+1. **Fork** this repo  
+2. **Branch**: `git checkout -b feature/YourFeature`  
+3. **Commit**: `git.commit -m "Implement YourFeature"`  
+4. **Push**: `git.push origin feature/YourFeature`  
+5. **PR**: Open a pull request—let’s ship fast.  
 
-📝 License & Contact
-License: MIT — see LICENSE
+---
 
-Contact: Le Huy Tuong ● Twitter: @yourhandle
-
-Repo: https://github.com/LeHuyTuong/Comic-Project
+## 📝 License & Contact
+- **License**: MIT — see [LICENSE](LICENSE)  
+- **Contact**: [Le Huy Tuong](mailto:you@example.com) ● Twitter: [@yourhandle](https://twitter.com/yourhandle)  
+- **Repo**: https://github.com/LeHuyTuong/Comic-Project  
