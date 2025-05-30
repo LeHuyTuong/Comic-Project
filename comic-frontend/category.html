@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thể Loại - Web Đọc Truyện</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="static/favicon.ico" type="image/x-icon">
+</head>
+<body class="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-sans">
+
+    <header id="navbar-placeholder" class="sticky top-0 z-50"></header>
+
+    <main class="container mx-auto px-4 py-8">
+        <h1 id="category-name" class="text-3xl font-bold mb-6 border-l-4 border-purple-500 pl-3">Thể Loại: <span class="text-purple-600 dark:text-purple-400">Loading...</span></h1>
+
+        <div class="mb-8 p-4 bg-white dark:bg-gray-800 rounded-lg shadow">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div>
+                    <label for="filter-status" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Trạng thái:</label>
+                    <select id="filter-status" class="mt-1 block w-full p-2 border-gray-300 dark:border-gray-600 dark:bg-gray-700 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                        <option value="all">Tất cả</option>
+                        <option value="ongoing">Đang cập nhật</option>
+                        <option value="completed">Hoàn thành</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="sort-by" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Sắp xếp theo:</label>
+                    <select id="sort-by" class="mt-1 block w-full p-2 border-gray-300 dark:border-gray-600 dark:bg-gray-700 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                        <option value="name_asc">Tên (A-Z)</option>
+                        <option value="name_desc">Tên (Z-A)</option>
+                        <option value="views_desc">Lượt xem (Cao-Thấp)</option>
+                        <option value="updated_desc">Ngày cập nhật (Mới nhất)</option>
+                    </select>
+                </div>
+                <div class="md:flex md:items-end">
+                     <button id="apply-filters-btn" class="w-full mt-1 md:mt-0 bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded">
+                        <i class="fas fa-filter mr-2"></i>Lọc
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="category-comics-list" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+            <p class="col-span-full text-center text-gray-500 dark:text-gray-400">Đang tải danh sách truyện...</p>
+        </div>
+
+        <nav id="pagination" aria-label="Page navigation" class="mt-12 flex justify-center">
+            <ul class="inline-flex items-center -space-x-px">
+                <li>
+                    <a href="#" class="py-2 px-3 ml-0 leading-tight text-gray-500 bg-white rounded-l-lg border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">Trước</a>
+                </li>
+                <li>
+                    <a href="#" aria-current="page" class="z-10 py-2 px-3 leading-tight text-blue-600 bg-blue-50 border border-blue-300 hover:bg-blue-100 hover:text-blue-700 dark:border-gray-700 dark:bg-gray-700 dark:text-white">1</a>
+                </li>
+                <li>
+                    <a href="#" class="py-2 px-3 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">2</a>
+                </li>
+                <li>
+                    <a href="#" class="py-2 px-3 leading-tight text-gray-500 bg-white rounded-r-lg border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">Sau</a>
+                </li>
+            </ul>
+        </nav>
+    </main>
+
+    <footer id="footer-placeholder"></footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/category.js"></script>
+    <script>
+        window.addEventListener('DOMContentLoaded', async () => {
+            await loadComponent('components/navbar.html', 'navbar-placeholder');
+            await loadComponent('components/footer.html', 'footer-placeholder');
+            if (typeof initCategoryPage === 'function') {
+                initCategoryPage();
+            }
+        });
+    </script>
+</body>
+</html>
+

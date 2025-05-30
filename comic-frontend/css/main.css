@@ -1,0 +1,75 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom styles */
+body {
+    /* Example: Add a custom font if needed */
+    /* font-family: 'Your Custom Font', sans-serif; */
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+/* Style for scrollbars (optional, for a more polished look) */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+.dark ::-webkit-scrollbar-track {
+    background: #2d3748; /* gray-800 */
+}
+.dark ::-webkit-scrollbar-thumb {
+    background: #718096; /* gray-500 */
+}
+.dark ::-webkit-scrollbar-thumb:hover {
+    background: #a0aec0; /* gray-400 */
+}
+
+
+/* Additional custom component styles if needed */
+.comic-card-image {
+    height: 200px; /* Or your preferred height */
+    object-fit: cover;
+}
+
+.chapter-link {
+    @apply block p-3 border-b border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors;
+}
+.chapter-link:last-child {
+    @apply border-b-0;
+}
+
+/* Styling for active nav link (example) */
+.nav-link-active {
+    @apply text-blue-500 dark:text-blue-400 font-semibold;
+}
+
+/* Styling for dark mode toggle button */
+#dark-mode-toggle {
+    /* Add specific styles if the generic button class is not enough */
+}
+
+/* Placeholder for slider styles if not using a library */
+.slider-container {
+    overflow: hidden;
+    position: relative;
+}
+.slider-wrapper {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+.slider-item {
+    min-width: 100%;
+    box-sizing: border-box;
+}

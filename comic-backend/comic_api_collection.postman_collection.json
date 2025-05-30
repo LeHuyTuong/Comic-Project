@@ -1,0 +1,357 @@
+{
+	"info": {
+		"_postman_id": "YOUR_COLLECTION_ID",
+		"name": "Comic API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"description": "API for Comic Website"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Register User",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"testuser2\",\n    \"email\": \"testuser2@example.com\",\n    \"password\": \"password123\"\n}"
+						},
+						"url": {
+							"raw": "{{baseURL}}/auth/register",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login User",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"testuser2@example.com\",\n    \"password\": \"password123\"\n}"
+						},
+						"url": {
+							"raw": "{{baseURL}}/auth/login",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Profile",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authToken}}"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL}}/auth/profile",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"auth",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Stories",
+			"item": [
+				{
+					"name": "Get All Stories",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/stories",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"stories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Story",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"My Awesome Comic Vol 2\",\n    \"author\": \"Jane Doe\",\n    \"genres\": [\"Fantasy\", \"Adventure\"],\n    \"description\": \"A new adventure begins.\",\n    \"coverImage\": \"https://example.com/cover2.jpg\",\n    \"status\": \"ongoing\"\n}"
+						},
+						"url": {
+							"raw": "{{baseURL}}/stories",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"stories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Story by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/stories/YOUR_STORY_ID",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"stories",
+								"YOUR_STORY_ID"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Story",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"My Awesome Comic Vol 2 - Updated\",\n    \"status\": \"completed\"\n}"
+						},
+						"url": {
+							"raw": "{{baseURL}}/stories/YOUR_STORY_ID",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"stories",
+								"YOUR_STORY_ID"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Story",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/stories/YOUR_STORY_ID",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"stories",
+								"YOUR_STORY_ID"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Chapters (Nested under Stories)",
+			"item": [
+				{
+					"name": "Get Chapters for Story",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/stories/YOUR_STORY_ID/chapters",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"stories",
+								"YOUR_STORY_ID",
+								"chapters"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Chapter for Story",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Chapter 1: The Journey Begins\",\n    \"chapterNumber\": 1,\n    \"pages\": [\"https://example.com/page1.jpg\", \"https://example.com/page2.jpg\"]\n}"
+						},
+						"url": {
+							"raw": "{{baseURL}}/stories/YOUR_STORY_ID/chapters",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"stories",
+								"YOUR_STORY_ID",
+								"chapters"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Chapter by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/stories/YOUR_STORY_ID/chapters/YOUR_CHAPTER_ID",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"stories",
+								"YOUR_STORY_ID",
+								"chapters",
+								"YOUR_CHAPTER_ID"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Chapter",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Chapter 1: The Journey Begins (Revised)\"\n}"
+						},
+						"url": {
+							"raw": "{{baseURL}}/stories/YOUR_STORY_ID/chapters/YOUR_CHAPTER_ID",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"stories",
+								"YOUR_STORY_ID",
+								"chapters",
+								"YOUR_CHAPTER_ID"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Chapter",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/stories/YOUR_STORY_ID/chapters/YOUR_CHAPTER_ID",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"stories",
+								"YOUR_STORY_ID",
+								"chapters",
+								"YOUR_CHAPTER_ID"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseURL",
+			"value": "http://localhost:5000/api",
+			"type": "string"
+		},
+		{
+			"key": "authToken",
+			"value": "",
+			"type": "string",
+			"description": "Set this after logging in"
+		}
+	]
+}

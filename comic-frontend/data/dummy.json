@@ -1,0 +1,97 @@
+
+{
+    "comics": [
+        {
+            "id": "comic1",
+            "title": "Đấu Phá Thương Khung",
+            "author": "Thiên Tằm Thổ Đậu",
+            "genres": ["Action", "Adventure", "Fantasy", "Manhua"],
+            "status": "ongoing",
+            "description": "Đây là một thế giới thuộc về Đấu Khí, không có ma pháp hoa tiếu diễm lệ, chỉ có Đấu Khí sinh sôi đến đỉnh cao! Tiêu Viêm, một thiên tài tu luyện hiếm có trong gia tộc, đột nhiên mất hết đấu khí và trở thành phế vật...",
+            "cover_image": "assets/images/cover1.jpg",
+            "views": 1250300,
+            "rating": 4.8,
+            "latest_chapter": "Chương 1650",
+            "last_updated": "2025-05-29T10:00:00Z"
+        },
+        {
+            "id": "comic2",
+            "title": "Võ Luyện Đỉnh Phong",
+            "author": "Mạc Mặc",
+            "genres": ["Action", "Martial Arts", "Fantasy", "Manhua"],
+            "status": "ongoing",
+            "description": "Võ đạo đỉnh phong, là cô độc, là tịch mịch, là dài đằng đẵng cầu索, là cao处bất thắng hàn. Dương Khai, một thiếu niên bình thường, vô tình có được một quyển Hắc Thư thần bí...",
+            "cover_image": "assets/images/cover2.jpg",
+            "views": 2500600,
+            "rating": 4.7,
+            "latest_chapter": "Chương 3000",
+            "last_updated": "2025-05-30T08:00:00Z"
+        },
+        {
+            "id": "comic3",
+            "title": "Toàn Chức Pháp Sư",
+            "author": "Loạn",
+            "genres": ["Action", "Fantasy", "School Life", "Manhua", "Comedy"],
+            "status": "completed",
+            "description": "Tỉnh lại sau giấc ngủ, thế giới đại biến. Quen thuộc cao trung dạy học là ma pháp, nói cho mọi người muốn trở thành một tên xuất sắc Ma Pháp Sư. Ngoài thành thị lang thang du đãng ma vật yêu thú nhìn chằm chằm...",
+            "cover_image": "assets/images/cover3.jpg",
+            "views": 980000,
+            "rating": 4.5,
+            "latest_chapter": "Chương 1200 (Full)",
+            "last_updated": "2024-01-15T12:00:00Z"
+        },
+        {
+            "id": "comic4",
+            "title": "One Punch Man",
+            "author": "ONE, Yusuke Murata",
+            "genres": ["Action", "Comedy", "Sci-fi", "Manga", "Romance"],
+            "status": "ongoing",
+            "description": "Saitama, một anh hùng có thể đánh bại bất kỳ kẻ thù nào chỉ bằng một cú đấm, nhưng lại cảm thấy nhàm chán vì không có đối thủ xứng tầm.",
+            "cover_image": "https://placehold.co/300x400/aabbcc/ffffff?text=One+Punch+Man&font=roboto",
+            "views": 3100500,
+            "rating": 4.9,
+            "latest_chapter": "Chương 215",
+            "last_updated": "2025-05-28T14:00:00Z"
+        },
+        {
+            "id": "comic5",
+            "title": "Attack on Titan",
+            "author": "Hajime Isayama",
+            "genres": ["Action", "Drama", "Fantasy", "Manga", "Mystery", "Romance"],
+            "status": "completed",
+            "description": "Nhân loại phải sống sau những bức tường khổng lồ để tự vệ khỏi các Titan, những sinh vật hình người khổng lồ ăn thịt người.",
+            "cover_image": "https://placehold.co/300x400/ccbbaa/ffffff?text=Attack+on+Titan&font=roboto",
+            "views": 4500000,
+            "rating": 4.9,
+            "latest_chapter": "Chương 139 (Full)",
+            "last_updated": "2021-04-09T00:00:00Z"
+        }
+    ],
+    "chapters": [
+        {"id": "comic1_chap1", "comic_id": "comic1", "name": "Chương 1: Phế Vật Tiêu Gia", "upload_date": "2023-01-01", "images": [] },
+        {"id": "comic1_chap2", "comic_id": "comic1", "name": "Chương 2: Dược Lão Thức Tỉnh", "upload_date": "2023-01-03", "images": [] },
+        {"id": "comic1_chap1650", "comic_id": "comic1", "name": "Chương 1650: Viêm Đế", "upload_date": "2025-05-29", "images": ["link_to_image_1.jpg", "link_to_image_2.jpg"]},
+        {"id": "comic2_chap1", "comic_id": "comic2", "name": "Chương 1: Dương Khai", "upload_date": "2022-06-10", "images": [] },
+        {"id": "comic2_chap2999", "comic_id": "comic2", "name": "Chương 2999", "upload_date": "2025-05-29", "images": [] },
+        {"id": "comic2_chap3000", "comic_id": "comic2", "name": "Chương 3000: Đại Chiến Ma Vực", "upload_date": "2025-05-30", "images": [] },
+        {"id": "comic3_chap1", "comic_id": "comic3", "name": "Chương 1: Thế Giới Thay Đổi", "upload_date": "2020-01-01", "images": [] },
+        {"id": "comic3_chap1200", "comic_id": "comic3", "name": "Chương 1200: Chung Cực Ma Pháp (Full)", "upload_date": "2024-01-15", "images": [] },
+        {"id": "comic4_chap215", "comic_id": "comic4", "name": "Chương 215: Hiệp Hội Quái Vật", "upload_date": "2025-05-28", "images": [] },
+        {"id": "comic5_chap1", "comic_id": "comic5", "name": "Chương 1", "upload_date": "2010-01-01", "images": [] },
+        {"id": "comic5_chap139", "comic_id": "comic5", "name": "Chương 139: Hướng Về Cái Cây Trên Ngọn Đồi Đó (Full)", "upload_date": "2021-04-09", "images": [] }
+    ],
+    "categories": [
+        {"id": "action", "name": "Action"},
+        {"id": "adventure", "name": "Adventure"},
+        {"id": "fantasy", "name": "Fantasy"},
+        {"id": "manhua", "name": "Manhua"},
+        {"id": "martial-arts", "name": "Martial Arts"},
+        {"id": "school-life", "name": "School Life"},
+        {"id": "comedy", "name": "Comedy"},
+        {"id": "romance", "name": "Romance"},
+        {"id": "sci-fi", "name": "Sci-fi"},
+        {"id": "manga", "name": "Manga"},
+        {"id": "drama", "name": "Drama"},
+        {"id": "mystery", "name": "Mystery"}
+    ]
+}

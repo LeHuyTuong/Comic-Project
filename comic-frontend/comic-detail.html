@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chi Tiết Truyện - Web Đọc Truyện</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="static/favicon.ico" type="image/x-icon">
+</head>
+<body class="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-sans">
+
+    <header id="navbar-placeholder" class="sticky top-0 z-50"></header>
+
+    <main class="container mx-auto px-4 py-8">
+        <div id="comic-detail-content" class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg">
+            <div class="animate-pulse">
+                <div class="flex flex-col md:flex-row gap-6">
+                    <div class="md:w-1/3">
+                        <div class="h-96 bg-gray-300 dark:bg-gray-700 rounded"></div>
+                    </div>
+                    <div class="md:w-2/3 space-y-4">
+                        <div class="h-8 bg-gray-300 dark:bg-gray-700 rounded w-3/4"></div>
+                        <div class="h-4 bg-gray-300 dark:bg-gray-700 rounded w-1/2"></div>
+                        <div class="h-4 bg-gray-300 dark:bg-gray-700 rounded w-1/3"></div>
+                        <div class="h-4 bg-gray-300 dark:bg-gray-700 rounded w-1/4"></div>
+                        <div class="h-20 bg-gray-300 dark:bg-gray-700 rounded"></div>
+                        <div class="flex space-x-2">
+                            <div class="h-10 bg-gray-300 dark:bg-gray-700 rounded w-24"></div>
+                            <div class="h-10 bg-gray-300 dark:bg-gray-700 rounded w-24"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-8">
+                    <div class="h-6 bg-gray-300 dark:bg-gray-700 rounded w-1/4 mb-4"></div>
+                    <div class="space-y-2">
+                        <div class="h-8 bg-gray-300 dark:bg-gray-700 rounded"></div>
+                        <div class="h-8 bg-gray-300 dark:bg-gray-700 rounded"></div>
+                        <div class="h-8 bg-gray-300 dark:bg-gray-700 rounded"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section id="comments-section" class="mt-12 bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg">
+            <h2 class="text-2xl font-bold mb-4">Bình Luận</h2>
+            <textarea class="w-full p-2 border rounded dark:bg-gray-700 dark:border-gray-600 mb-4" rows="4" placeholder="Viết bình luận của bạn..."></textarea>
+            <button class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded">Gửi Bình Luận</button>
+            <div class="mt-6 space-y-4">
+                <div class="p-3 bg-gray-50 dark:bg-gray-700 rounded">
+                    <p class="font-semibold">Tên Người Dùng</p>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">Đây là một bình luận mẫu.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="footer-placeholder"></footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/comic-detail.js"></script>
+    <script>
+        window.addEventListener('DOMContentLoaded', async () => {
+            await loadComponent('components/navbar.html', 'navbar-placeholder');
+            await loadComponent('components/footer.html', 'footer-placeholder');
+            if (typeof initComicDetailPage === 'function') {
+                initComicDetailPage();
+            }
+        });
+    </script>
+</body>
+</html>
