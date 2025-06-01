@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang Chủ - Web Đọc Truyện</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="static/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" crossorigin href="/assets/index-C-Uo3YUY.css">
+</head>
+<body class="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-sans">
+
+    <header id="navbar-placeholder" class="sticky top-0 z-50"></header>
+
+    <main class="container mx-auto px-4 py-8">
+        <section id="featured-comics" class="mb-12">
+            <h2 class="text-3xl font-bold mb-6 border-l-4 border-blue-500 pl-3">Truyện Nổi Bật</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="featured-comics-list">
+                <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-lg animate-pulse min-h-[200px]">
+                    <div class="h-40 bg-gray-300 dark:bg-gray-700 rounded mb-2"></div>
+                    <div class="h-6 bg-gray-300 dark:bg-gray-700 rounded w-3/4"></div>
+                </div>
+                 <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-lg animate-pulse min-h-[200px]">
+                    <div class="h-40 bg-gray-300 dark:bg-gray-700 rounded mb-2"></div>
+                    <div class="h-6 bg-gray-300 dark:bg-gray-700 rounded w-3/4"></div>
+                </div>
+                 <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-lg animate-pulse min-h-[200px]">
+                    <div class="h-40 bg-gray-300 dark:bg-gray-700 rounded mb-2"></div>
+                    <div class="h-6 bg-gray-300 dark:bg-gray-700 rounded w-3/4"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="latest-updates" class="mb-12">
+            <h2 class="text-3xl font-bold mb-6 border-l-4 border-green-500 pl-3">Mới Cập Nhật</h2>
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4" id="latest-updates-list">
+                </div>
+        </section>
+
+        <section id="ranking-charts" class="mb-12">
+            <h2 class="text-3xl font-bold mb-6 border-l-4 border-red-500 pl-3">Bảng Xếp Hạng</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-semibold mb-3 text-center">Top Ngày</h3>
+                    <ul id="top-day-list" class="space-y-2 bg-white dark:bg-gray-800 p-4 rounded-lg shadow">
+                        </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-3 text-center">Top Tuần</h3>
+                    <ul id="top-week-list" class="space-y-2 bg-white dark:bg-gray-800 p-4 rounded-lg shadow">
+                        </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-3 text-center">Top Tháng</h3>
+                    <ul id="top-month-list" class="space-y-2 bg-white dark:bg-gray-800 p-4 rounded-lg shadow">
+                        </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="footer-placeholder"></footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/home.js"></script>
+    <script>
+        // Load components
+        window.addEventListener('DOMContentLoaded', async () => {
+            await loadComponent('components/navbar.html', 'navbar-placeholder');
+            await loadComponent('components/footer.html', 'footer-placeholder');
+            // Khởi tạo trang chủ
+            if (typeof initHomePage === 'function') {
+                initHomePage();
+            }
+        });
+    </script>
+</body>
+</html>
