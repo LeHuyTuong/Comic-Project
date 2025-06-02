@@ -1,4 +1,6 @@
 // comic-frontend/js/home.js
+import { apiRequest } from './api.js';
+
 async function initHomePage() {
     console.log("Đang khởi tạo Trang Chủ với dữ liệu từ Backend...");
     const featuredList = document.getElementById('featured-comics-list');
@@ -93,4 +95,7 @@ async function initHomePage() {
         // (Thêm cho ranking lists nếu muốn)
     }
 }
+
+export { initHomePage };
+
 console.log("home.js đã được tải và sẵn sàng tương tác với backend.");

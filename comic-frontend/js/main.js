@@ -121,4 +121,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // Các khởi tạo toàn cục khác có thể đặt ở đây
 });
 
+export { loadComponent, toggleDarkMode };
+
 console.log("main.js đã được tải và các hàm đã được định nghĩa.");

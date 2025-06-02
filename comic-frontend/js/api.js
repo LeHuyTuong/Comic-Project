@@ -1,5 +1,5 @@
 // comic-frontend/js/api.js
-const API_BASE_URL = 'http://localhost:5000/api'; // Đảm bảo cổng này (5000) khớp với backend PORT của bạn
+const API_BASE_URL = 'https://tuongtruyen.io.vn/api'; // Đảm bảo cổng này (5000) khớp với backend PORT của bạn
 
 /**
  * Hàm chung để thực hiện các yêu cầu API đến backend.
@@ -65,4 +65,7 @@ async function apiRequest(endpoint, method = 'GET', body = null, customHeaders =
         throw error; // Ném lại lỗi để nơi gọi có thể xử lý cụ thể
     }
 }
+
+export { apiRequest };
+
 console.log("api.js (để tương tác với backend) đã được tải.");

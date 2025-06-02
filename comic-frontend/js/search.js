@@ -188,6 +188,8 @@ async function initSearchPage() {
         performSearch(newPage);
     });
 }
+export { initSearchPage };
+
 console.log("search.js đã được tải và sẵn sàng tương tác với backend.");
 
 // Endpoint lấy danh sách thể loại ở backend (ví dụ)
