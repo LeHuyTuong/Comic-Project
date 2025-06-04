@@ -1,4 +1,7 @@
 // comic-frontend/js/comic-detail.js
+import { apiRequest } from './api.js';
+import { populateChapterItem } from './main.js';
+
 async function initComicDetailPage() {
     console.log("Đang khởi tạo Trang Chi Tiết Truyện với dữ liệu từ Backend...");
     const comicDetailContent = document.getElementById('comic-detail-content');
@@ -109,5 +112,6 @@ async function initComicDetailPage() {
         comicDetailContent.innerHTML = `<p class="text-red-500 text-center p-10">Lỗi tải thông tin truyện: ${error.message}</p>`;
     }
 }
+export { initComicDetailPage };
 console.log("comic-detail.js đã được tải và sẵn sàng tương tác với backend.");
 

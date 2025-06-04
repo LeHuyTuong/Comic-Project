@@ -1,4 +1,6 @@
 // comic-frontend/js/search.js
+import { apiRequest } from './api.js';
+import { populateComicCard } from './main.js';
 async function initSearchPage() {
     console.log("Đang khởi tạo Trang Tìm Kiếm với dữ liệu từ Backend...");
     const searchForm = document.getElementById('advanced-search-form');
