@@ -1,0 +1,381 @@
+<nav class="bg-white dark:bg-gray-800 shadow-md">
+    <div class="container mx-auto px-4">
+        <div class="flex items-center justify-between h-16">
+            <div class="flex-shrink-0">
+                <a href="index.html" class="flex items-center space-x-2">
+                    <img class="h-10 w-auto" src="assets/images/new-logo.png" alt="Logo Web Truyện" onerror="this.onerror=null;this.src='https://placehold.co/100x40/007bff/ffffff?text=Logo&font=roboto';">
+                    <span class="font-bold text-xl text-blue-600 dark:text-blue-400 hidden sm:inline">Tường Truyện</span>
+                </a>
+            </div>
+
+            <div class="flex-grow max-w-xl mx-4 hidden md:block">
+                <form action="search.html" method="GET" class="relative" id="desktop-search-form">
+                    <input type="search" name="title" id="desktop-search-input" placeholder="Tìm truyện theo tên..." class="w-full py-2 px-4 pr-10 rounded-full border border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-gray-100" />
+                    <button type="submit" class="absolute right-0 top-0 mt-2 mr-3 text-gray-500 dark:text-gray-400 hover:text-blue-500">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </form>
+            </div>
+
+            <div class="flex items-center space-x-2 sm:space-x-3">
+                <button id="mobile-menu-button" class="md:hidden p-2 rounded-md text-gray-600 dark:text-gray-300 hover:text-blue-500 hover:bg-gray-100 dark:hover:bg-gray-700">
+                     <i class="fas fa-bars text-xl"></i>
+                </button>
+
+                <div class="hidden md:flex items-center space-x-1 lg:space-x-3">
+                    <a href="index.html" class="px-2 lg:px-3 py-2 rounded-md text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Trang Chủ</a>
+                    <div class="relative group">
+                        <button class="px-2 lg:px-3 py-2 rounded-md text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors focus:outline-none flex items-center">
+                            Thể Loại <i class="fas fa-chevron-down fa-xs ml-1"></i>
+                        </button>
+                        <div id="category-dropdown-menu" class="absolute right-0 mt-2 w-48 bg-white dark:bg-gray-800 rounded-md shadow-lg py-1 z-20 hidden group-hover:block max-h-60 overflow-y-auto">
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-200">Đang tải...</a>
+                        </div>
+                    </div>
+                    <a href="search.html" class="px-2 lg:px-3 py-2 rounded-md text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Tìm Kiếm</a>
+                </div>
+                
+                <button id="dark-mode-toggle-navbar" title="Chế độ Sáng/Tối" class="dark-mode-toggle-button p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-600 dark:text-gray-300 transition-colors">
+                    <i class="fas fa-moon text-xl"></i> </button>
+
+                <div id="auth-links-navbar">
+                    <a href="#" onclick="showLoginModal()" class="px-2 sm:px-3 py-1.5 sm:py-2 rounded-md text-sm font-medium bg-blue-500 hover:bg-blue-600 text-white transition-colors">Đăng Nhập</a>
+                    </div>
+            </div>
+        </div>
+    </div>
+    <div id="mobile-menu" class="md:hidden hidden bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700">
+        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+             <form action="search.html" method="GET" class="relative mb-3" id="mobile-search-form">
+                <input type="search" name="title" id="mobile-search-input" placeholder="Tìm truyện..." class="w-full py-2 px-3 pr-10 rounded-full border border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-gray-100" />
+                <button type="submit" class="absolute right-0 top-0 mt-2 mr-3 text-gray-500 dark:text-gray-400 hover:text-blue-500">
+                    <i class="fas fa-search"></i>
+                </button>
+            </form>
+            <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-700">Trang Chủ</a>
+            <div class="mt-1">
+                <span class="block px-3 py-2 text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase">Thể Loại</span>
+                <div id="mobile-category-links" class="mt-1 space-y-1 max-h-48 overflow-y-auto">
+                     <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-700">Đang tải...</a>
+                </div>
+            </div>
+            <a href="search.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-700 mt-1">Tìm Kiếm Nâng Cao</a>
+             <div id="auth-links-mobile-menu" class="mt-2 pt-2 border-t border-gray-200 dark:border-gray-700">
+                 <a href="#" onclick="showLoginModal()" class="block w-full text-left px-3 py-2 rounded-md text-base font-medium bg-blue-500 hover:bg-blue-600 text-white transition-colors">Đăng Nhập</a>
+             </div>
+        </div>
+    </div>
+</nav>
+<div id="loginModal" class="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full z-[100] hidden flex items-center justify-center">
+  <div class="relative mx-auto p-5 border w-full max-w-md shadow-lg rounded-md bg-white dark:bg-gray-800">
+    <div class="mt-3 text-center">
+      <h3 class="text-lg leading-6 font-medium text-gray-900 dark:text-white mb-4" id="modal-title">Đăng Nhập</h3>
+      <form id="loginForm" class="space-y-4">
+        <div>
+          <label for="email" class="sr-only">Email</label>
+          <input type="email" name="email" id="modal-email" required class="w-full p-2.5 rounded-md border border-gray-300 dark:border-gray-600 dark:bg-gray-700 focus:ring-blue-500 focus:border-blue-500" placeholder="Nhập email của bạn">
+        </div>
+        <div>
+          <label for="password" class="sr-only">Mật khẩu</label>
+          <input type="password" name="password" id="modal-password" required class="w-full p-2.5 rounded-md border border-gray-300 dark:border-gray-600 dark:bg-gray-700 focus:ring-blue-500 focus:border-blue-500" placeholder="Nhập mật khẩu">
+        </div>
+        <p id="loginError" class="text-sm text-red-500 hidden"></p>
+        <div class="items-center px-4 py-3">
+          <button id="loginSubmitButton" type="submit" class="px-4 py-2 bg-blue-500 text-white text-base font-medium rounded-md w-full shadow-sm hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-300">
+            Đăng Nhập
+          </button>
+        </div>
+      </form>
+      <div class="mt-2 text-sm">
+        <p class="text-gray-600 dark:text-gray-400">Chưa có tài khoản? <a href="#" onclick="showRegisterModal()" class="text-blue-500 hover:underline">Đăng ký ngay</a></p>
+      </div>
+       <button type="button" onclick="closeLoginModal()" class="absolute top-0 right-0 mt-2 mr-2 text-gray-400 hover:text-gray-600 dark:hover:text-white">
+            <span class="sr-only">Đóng</span>
+            <i class="fas fa-times text-xl"></i>
+        </button>
+    </div>
+  </div>
+</div>
+<div id="registerModal" class="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full z-[100] hidden flex items-center justify-center">
+  <div class="relative mx-auto p-5 border w-full max-w-md shadow-lg rounded-md bg-white dark:bg-gray-800">
+    <div class="mt-3 text-center">
+      <h3 class="text-lg leading-6 font-medium text-gray-900 dark:text-white mb-4">Đăng Ký</h3>
+      <form id="registerForm" class="space-y-4">
+        <div>
+          <input type="text" name="username" id="register-username" required class="w-full p-2.5 rounded-md border border-gray-300 dark:border-gray-600 dark:bg-gray-700" placeholder="Tên người dùng">
+        </div>
+        <div>
+          <input type="email" name="email" id="register-email" required class="w-full p-2.5 rounded-md border border-gray-300 dark:border-gray-600 dark:bg-gray-700" placeholder="Email">
+        </div>
+        <div>
+          <input type="password" name="password" id="register-password" required class="w-full p-2.5 rounded-md border border-gray-300 dark:border-gray-600 dark:bg-gray-700" placeholder="Mật khẩu (ít nhất 6 ký tự)">
+        </div>
+         <p id="registerError" class="text-sm text-red-500 hidden"></p>
+        <div class="items-center px-4 py-3">
+          <button id="registerSubmitButton" type="submit" class="px-4 py-2 bg-green-500 text-white text-base font-medium rounded-md w-full shadow-sm hover:bg-green-600">
+            Đăng Ký
+          </button>
+        </div>
+      </form>
+      <div class="mt-2 text-sm">
+        <p class="text-gray-600 dark:text-gray-400">Đã có tài khoản? <a href="#" onclick="showLoginModalFromRegister()" class="text-blue-500 hover:underline">Đăng nhập</a></p>
+      </div>
+       <button type="button" onclick="closeRegisterModal()" class="absolute top-0 right-0 mt-2 mr-2 text-gray-400 hover:text-gray-600 dark:hover:text-white">
+            <span class="sr-only">Đóng</span>
+            <i class="fas fa-times text-xl"></i>
+        </button>
+    </div>
+  </div>
+</div>
+
+<script>
+    // Script này chạy khi navbar.html được tải vào một trang khác.
+    // Nó đảm bảo rằng nút chuyển chế độ tối bên trong navbar cũng hoạt động.
+    // Nó cũng xử lý việc bật/tắt menu mobile.
+    (function() {
+        // Menu mobile
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        if (mobileMenuButton && mobileMenu) {
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+
+        // Tải động danh sách thể loại vào dropdown và menu mobile
+        async function loadCategoriesForNavbar() {
+            const categoryDropdownMenu = document.getElementById('category-dropdown-menu');
+            const mobileCategoryLinks = document.getElementById('mobile-category-links');
+
+            if (!categoryDropdownMenu || !mobileCategoryLinks) return;
+            
+            // API_BASE_URL và apiRequest được định nghĩa trong js/api.js, đã được defer load
+            // Đảm bảo api.js được tải trước khi script này chạy (thường là vậy do thứ tự)
+            if (typeof apiRequest === 'function') {
+                try {
+                    // Giả sử backend có endpoint /stories/categories để lấy danh sách thể loại duy nhất
+                    // Hoặc bạn có thể lấy từ /categories nếu có API riêng
+                    const response = await apiRequest('/stories/categories'); 
+                    if (response && response.success && response.data) {
+                        const categories = response.data;
+                        categoryDropdownMenu.innerHTML = ''; // Xóa placeholder "Đang tải..."
+                        mobileCategoryLinks.innerHTML = ''; // Xóa placeholder "Đang tải..."
+
+                        if (categories.length > 0) {
+                            categories.forEach(categoryName => { // Giả sử API trả về mảng các chuỗi tên thể loại
+                                const link = `category.html?genre=${encodeURIComponent(categoryName.toLowerCase())}`;
+                                // Dropdown Desktop
+                                categoryDropdownMenu.insertAdjacentHTML('beforeend', 
+                                    `<a href="${link}" class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700">${categoryName}</a>`
+                                );
+                                // Menu Mobile
+                                mobileCategoryLinks.insertAdjacentHTML('beforeend',
+                                    `<a href="${link}" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-700">${categoryName}</a>`
+                                );
+                            });
+                        } else {
+                             categoryDropdownMenu.innerHTML = '<span class="block px-4 py-2 text-sm text-gray-500 dark:text-gray-400">Không có thể loại.</span>';
+                             mobileCategoryLinks.innerHTML = '<span class="block px-3 py-2 text-base text-gray-500 dark:text-gray-400">Không có thể loại.</span>';
+                        }
+                    } else {
+                        throw new Error(response ? response.error : "Không thể tải thể loại");
+                    }
+                } catch (error) {
+                    console.error('Lỗi tải thể loại cho navbar:', error);
+                    categoryDropdownMenu.innerHTML = '<span class="block px-4 py-2 text-sm text-red-500">Lỗi tải thể loại.</span>';
+                    mobileCategoryLinks.innerHTML = '<span class="block px-3 py-2 text-base text-red-500">Lỗi tải thể loại.</span>';
+                }
+            } else {
+                console.warn('Hàm apiRequest không khả dụng để tải thể loại trong navbar.');
+                 categoryDropdownMenu.innerHTML = '<span class="block px-4 py-2 text-sm text-orange-500">Chưa tải được API.</span>';
+                 mobileCategoryLinks.innerHTML = '<span class="block px-3 py-2 text-base text-orange-500">Chưa tải được API.</span>';
+            }
+        }
+        
+        // Gọi hàm tải thể loại.
+        // Script này chạy sau khi DOM của navbar được chèn, và các script defer (như api.js) đã chạy.
+        loadCategoriesForNavbar();
+
+        // Nút chuyển chế độ tối ('dark-mode-toggle-navbar') có class 'dark-mode-toggle-button'.
+        // Nó sẽ được xử lý bởi hàm applyInitialDarkMode toàn cục trong main.js.
+        // Không cần logic chế độ tối cụ thể ở đây.
+        // Tuy nhiên, đảm bảo applyInitialDarkMode được gọi lại sau khi component này được load nếu cần.
+        if (typeof applyInitialDarkMode === 'function') {
+            applyInitialDarkMode();
+        }
+
+        // Xử lý tìm kiếm trên thanh navbar
+        const desktopSearchForm = document.getElementById('desktop-search-form');
+        const mobileSearchForm = document.getElementById('mobile-search-form');
+        const handleSearchSubmit = (event) => {
+            event.preventDefault();
+            const searchInput = event.target.querySelector('input[name="title"]');
+            if (searchInput && searchInput.value.trim() !== '') {
+                window.location.href = `search.html?title=${encodeURIComponent(searchInput.value.trim())}`;
+            }
+        };
+        if(desktopSearchForm) desktopSearchForm.addEventListener('submit', handleSearchSubmit);
+        if(mobileSearchForm) mobileSearchForm.addEventListener('submit', handleSearchSubmit);
+
+        // Xử lý Modal Đăng nhập/Đăng ký
+        const loginModal = document.getElementById('loginModal');
+        const registerModal = document.getElementById('registerModal');
+        const loginForm = document.getElementById('loginForm');
+        const registerForm = document.getElementById('registerForm');
+        const loginErrorEl = document.getElementById('loginError');
+        const registerErrorEl = document.getElementById('registerError');
+
+        window.showLoginModal = () => {
+            if(registerModal) registerModal.classList.add('hidden');
+            if(loginModal) loginModal.classList.remove('hidden');
+            if(loginErrorEl) loginErrorEl.classList.add('hidden');
+        }
+        window.closeLoginModal = () => {
+            if(loginModal) loginModal.classList.add('hidden');
+        }
+        window.showRegisterModal = () => {
+            if(loginModal) loginModal.classList.add('hidden');
+            if(registerModal) registerModal.classList.remove('hidden');
+            if(registerErrorEl) registerErrorEl.classList.add('hidden');
+        }
+        window.closeRegisterModal = () => {
+            if(registerModal) registerModal.classList.add('hidden');
+        }
+        window.showLoginModalFromRegister = () => { // Được gọi từ modal đăng ký
+            closeRegisterModal();
+            showLoginModal();
+        }
+
+
+        if (loginForm) {
+            loginForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                loginErrorEl.classList.add('hidden');
+                const email = document.getElementById('modal-email').value;
+                const password = document.getElementById('modal-password').value;
+                const submitButton = document.getElementById('loginSubmitButton');
+                const originalButtonText = submitButton.innerHTML;
+                submitButton.innerHTML = 'Đang xử lý... <i class="fas fa-spinner fa-spin"></i>';
+                submitButton.disabled = true;
+
+                try {
+                    const response = await apiRequest('/auth/login', 'POST', { email, password });
+                    if (response.success && response.token) {
+                        localStorage.setItem('authToken', response.token);
+                        localStorage.setItem('currentUser', JSON.stringify(response.data)); // Lưu thông tin người dùng
+                        alert('Đăng nhập thành công!');
+                        closeLoginModal();
+                        updateAuthUI(); // Cập nhật UI sau khi đăng nhập
+                        // window.location.reload(); // Hoặc tải lại trang để cập nhật trạng thái
+                    } else {
+                        loginErrorEl.textContent = response.error || 'Đăng nhập thất bại.';
+                        loginErrorEl.classList.remove('hidden');
+                    }
+                } catch (error) {
+                    loginErrorEl.textContent = error.message || 'Lỗi không xác định.';
+                    loginErrorEl.classList.remove('hidden');
+                } finally {
+                    submitButton.innerHTML = originalButtonText;
+                    submitButton.disabled = false;
+                }
+            });
+        }
+
+        if (registerForm) {
+            registerForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                registerErrorEl.classList.add('hidden');
+                const username = document.getElementById('register-username').value;
+                const email = document.getElementById('register-email').value;
+                const password = document.getElementById('register-password').value;
+                const submitButton = document.getElementById('registerSubmitButton');
+                const originalButtonText = submitButton.innerHTML;
+                submitButton.innerHTML = 'Đang xử lý... <i class="fas fa-spinner fa-spin"></i>';
+                submitButton.disabled = true;
+
+                try {
+                    const response = await apiRequest('/auth/register', 'POST', { username, email, password });
+                    if (response.success && response.token) {
+                        localStorage.setItem('authToken', response.token);
+                        localStorage.setItem('currentUser', JSON.stringify(response.data));
+                        alert('Đăng ký thành công! Bạn đã được tự động đăng nhập.');
+                        closeRegisterModal();
+                        updateAuthUI();
+                        // window.location.reload();
+                    } else {
+                        registerErrorEl.textContent = response.error || 'Đăng ký thất bại.';
+                        registerErrorEl.classList.remove('hidden');
+                    }
+                } catch (error) {
+                     registerErrorEl.textContent = error.message || 'Lỗi không xác định.';
+                     registerErrorEl.classList.remove('hidden');
+                } finally {
+                    submitButton.innerHTML = originalButtonText;
+                    submitButton.disabled = false;
+                }
+            });
+        }
+        
+        // Hàm cập nhật UI sau khi đăng nhập/đăng xuất
+        window.updateAuthUI = () => {
+            const authToken = localStorage.getItem('authToken');
+            const currentUserData = localStorage.getItem('currentUser');
+            const authLinksNavbar = document.getElementById('auth-links-navbar');
+            const authLinksMobileMenu = document.getElementById('auth-links-mobile-menu');
+
+            if (authToken && currentUserData && authLinksNavbar && authLinksMobileMenu) {
+                try {
+                    const user = JSON.parse(currentUserData);
+                    const userDisplay = `
+                        <div class="relative group">
+                            <button class="px-2 lg:px-3 py-2 rounded-md text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 flex items-center">
+                                <i class="fas fa-user-circle mr-2 text-lg"></i> ${user.username} <i class="fas fa-chevron-down fa-xs ml-1"></i>
+                            </button>
+                            <div class="absolute right-0 mt-2 w-48 bg-white dark:bg-gray-800 rounded-md shadow-lg py-1 z-20 hidden group-hover:block">
+                                <a href="#" id="user-profile-link" class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700">Trang cá nhân</a>
+                                ${user.role === 'admin' ? '<a href="#" id="admin-dashboard-link" class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700">Trang quản trị</a>' : ''}
+                                <a href="#" id="logout-button-desktop" class="block px-4 py-2 text-sm text-red-600 dark:text-red-400 hover:bg-gray-100 dark:hover:bg-gray-700">Đăng xuất</a>
+                            </div>
+                        </div>`;
+                    authLinksNavbar.innerHTML = userDisplay;
+
+                    const mobileUserDisplay = `
+                        <div class="px-3 py-2 text-base font-medium text-gray-700 dark:text-gray-200">${user.username}</div>
+                        <a href="#" id="user-profile-link-mobile" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-700">Trang cá nhân</a>
+                        ${user.role === 'admin' ? '<a href="#" id="admin-dashboard-link-mobile" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-700">Trang quản trị</a>' : ''}
+                        <a href="#" id="logout-button-mobile" class="block w-full text-left px-3 py-2 mt-1 rounded-md text-base font-medium bg-red-500 hover:bg-red-600 text-white transition-colors">Đăng xuất</a>
+                    `;
+                    authLinksMobileMenu.innerHTML = mobileUserDisplay;
+
+                    // Gắn sự kiện cho nút đăng xuất
+                    document.getElementById('logout-button-desktop')?.addEventListener('click', handleLogout);
+                    document.getElementById('logout-button-mobile')?.addEventListener('click', handleLogout);
+
+                } catch(e) { console.error("Lỗi parse thông tin người dùng:", e); resetAuthUI(); }
+            } else {
+               resetAuthUI();
+            }
+        }
+
+        function resetAuthUI() {
+            const authLinksNavbar = document.getElementById('auth-links-navbar');
+            const authLinksMobileMenu = document.getElementById('auth-links-mobile-menu');
+            if(authLinksNavbar) authLinksNavbar.innerHTML = `<a href="#" onclick="showLoginModal()" class="px-2 sm:px-3 py-1.5 sm:py-2 rounded-md text-sm font-medium bg-blue-500 hover:bg-blue-600 text-white transition-colors">Đăng Nhập</a>`;
+            if(authLinksMobileMenu) authLinksMobileMenu.innerHTML = `<a href="#" onclick="showLoginModal()" class="block w-full text-left px-3 py-2 rounded-md text-base font-medium bg-blue-500 hover:bg-blue-600 text-white transition-colors">Đăng Nhập</a>`;
+        }
+
+        window.handleLogout = (e) => {
+            e.preventDefault();
+            localStorage.removeItem('authToken');
+            localStorage.removeItem('currentUser');
+            alert('Đã đăng xuất!');
+            updateAuthUI();
+            // Có thể điều hướng về trang chủ: window.location.href = 'index.html';
+        }
+
+        // Cập nhật UI khi navbar được tải
+        updateAuthUI();
+
+
+    })();
+</script>

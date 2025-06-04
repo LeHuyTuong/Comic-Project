@@ -1,0 +1,17 @@
+
+<div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden transform transition-all hover:scale-105 duration-300">
+    <a href="{{comic_url}}" class="block">
+        <img src="{{image_url}}" alt="{{title}}" class="w-full h-48 sm:h-56 md:h-64 object-cover comic-card-image" onerror="this.onerror=null;this.src='https://placehold.co/300x400/eeeeee/999999?text=Ảnh+Bìa&font=roboto';">
+    </a>
+    <div class="p-4">
+        <h3 class="text-lg font-semibold mb-1 truncate" title="{{title}}">
+            <a href="{{comic_url}}" class="hover:text-blue-500 dark:hover:text-blue-400 transition-colors">{{title}}</a>
+        </h3>
+        <p class="text-sm text-gray-600 dark:text-gray-400 mb-2 truncate">
+            Chap mới: <a href="{{comic_url}}" class="hover:text-blue-500 dark:hover:text-blue-400 transition-colors">{{latest_chapter_name}}</a>
+        </p>
+        <div class="flex items-center justify-between text-xs text-gray-500 dark:text-gray-400">
+            <span><i class="fas fa-eye mr-1"></i>{{views}}</span>
+            </div>
+    </div>
+</div>
