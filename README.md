@@ -100,7 +100,7 @@ live-server                  # Mở UI tại http://127.0.0.1:8080
 ```
 ### Deploying to GitHub Pages
 ```bash
-cd comic-frontend
+# Build and deploy the frontend via root scripts
 VITE_BASE_PATH=/Comic-Project npm run build
 npm run deploy
 ```

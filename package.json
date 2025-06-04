@@ -1,10 +1,9 @@
 {
   "devDependencies": {
-    "gh-pages": "^6.3.0",
-    "vite": "^6.3.5"
+    "gh-pages": "^6.3.0"
   },
   "scripts": {
-    "build": "vite build",
-    "deploy": "gh-pages -d dist"
+    "build": "npm --prefix comic-frontend run build",
+    "deploy": "npm --prefix comic-frontend run deploy"
   }
 }
