@@ -125,7 +125,7 @@ live-server                  # Mở UI tại http://127.0.0.1:8080
 ## 🤝 Contributing
 1. **Fork** this repo  
 2. **Branch**: `git checkout -b feature/YourFeature`  
-3. **Commit**: `git.commit -m "Implement YourFeature"`  
+3. **Commit**: `git commit -m "Implement YourFeature"`
 4. **Push**: `git.push origin feature/YourFeature`  
 5. **PR**: Open a pull request—let’s ship fast.  
 
