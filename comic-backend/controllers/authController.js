@@ -7,14 +7,18 @@ const User = require('../models/User');
 // @access  Public
 exports.register = async (req, res, next) => {
     try {
-        const { username, email, password, role } = req.body;
+        const { username, email, password, role: requestedRole } = req.body;
 
-        // Tạo người dùng
+        // Chỉ chấp nhận các vai trò nằm trong danh sách cho phép
+        const allowedRoles = ['user']; // Mở rộng khi cần tạo admin qua route riêng
+        const role = allowedRoles.includes(requestedRole) ? requestedRole : 'user';
+
+        // Tạo người dùng với vai trò đã được kiểm soát
         const user = await User.create({
             username,
             email,
             password,
-            role // Tùy chọn: chỉ cho phép các vai trò cụ thể hoặc mặc định là 'user'
+            role
         });
 
         sendTokenResponse(user, 201, res);
