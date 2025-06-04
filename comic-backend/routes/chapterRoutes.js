@@ -1,6 +1,6 @@
 const express = require('express');
 const {
-    getChaptersByStory, // This controller method is actually defined in storyController to get storyId first
+    getChaptersByStory, // Handler from chapterController to fetch chapters by storyId
     getChapter,
     createChapter,
     updateChapter,
