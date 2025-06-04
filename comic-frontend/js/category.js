@@ -1,4 +1,7 @@
 // comic-frontend/js/category.js
+import { apiRequest } from './api.js';
+import { populateComicCard } from './main.js';
+
 async function initCategoryPage() {
     console.log("Đang khởi tạo Trang Thể Loại với dữ liệu từ Backend...");
     const categoryNameElement = document.getElementById('category-name')?.querySelector('span');
@@ -170,4 +173,5 @@ async function initCategoryPage() {
         fetchAndDisplayComics(newPage);
     });
 }
+export { initCategoryPage };
 console.log("category.js đã được tải và sẵn sàng tương tác với backend.");

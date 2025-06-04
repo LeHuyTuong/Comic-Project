@@ -1,5 +1,6 @@
 // comic-frontend/js/home.js
 import { apiRequest } from './api.js';
+import { populateComicCard } from './main.js';
 
 async function initHomePage() {
     console.log("Đang khởi tạo Trang Chủ với dữ liệu từ Backend...");

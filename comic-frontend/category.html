@@ -68,16 +68,16 @@
 
     <footer id="footer-placeholder"></footer>
 
-    <script src="js/main.js"></script>
-    <script src="js/api.js"></script>
-    <script src="js/category.js"></script>
-    <script>
+    <script type="module" src="js/main.js"></script>
+    <script type="module" src="js/api.js"></script>
+    <script type="module" src="js/category.js"></script>
+    <script type="module">
+        import { loadComponent } from './js/main.js';
+        import { initCategoryPage } from './js/category.js';
         window.addEventListener('DOMContentLoaded', async () => {
             await loadComponent('components/navbar.html', 'navbar-placeholder');
             await loadComponent('components/footer.html', 'footer-placeholder');
-            if (typeof initCategoryPage === 'function') {
-                initCategoryPage();
-            }
+            initCategoryPage();
         });
     </script>
 </body>

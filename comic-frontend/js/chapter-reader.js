@@ -1,4 +1,6 @@
 // comic-frontend/js/chapter-reader.js
+import { apiRequest } from './api.js';
+
 async function initChapterReaderPage() {
     console.log("Đang khởi tạo Trang Đọc Truyện với dữ liệu từ Backend...");
     const chapterImagesContainer = document.getElementById('chapter-images');
@@ -154,5 +156,6 @@ async function initChapterReaderPage() {
         chapterSelect.disabled = true;
     }
 }
+export { initChapterReaderPage };
 console.log("chapter-reader.js đã được tải và sẵn sàng tương tác với backend.");
 

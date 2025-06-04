@@ -56,17 +56,16 @@
     </div>
 
 
-    <script src="js/main.js"></script> 
-    <script src="js/api.js"></script>
-    <script src="js/chapter-reader.js"></script>
-    <script>
+    <script type="module" src="js/main.js"></script>
+    <script type="module" src="js/api.js"></script>
+    <script type="module" src="js/chapter-reader.js"></script>
+    <script type="module">
+        import { initChapterReaderPage } from './js/chapter-reader.js';
         window.addEventListener('DOMContentLoaded', () => {
             // The dark mode button 'toggle-dark-mode-reader' now has class 'dark-mode-toggle-button'
             // and will be handled by the global applyInitialDarkMode in main.js.
             // No specific setup needed here for its click listener or icon update.
-            if (typeof initChapterReaderPage === 'function') {
-                initChapterReaderPage();
-            }
+            initChapterReaderPage();
         });
     </script>
 </body>
